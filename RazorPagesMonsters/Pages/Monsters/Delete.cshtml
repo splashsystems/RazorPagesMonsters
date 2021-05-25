@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int}"
 @model RazorPagesMonsters.Pages.Monsters.DeleteModel
 
 @{
@@ -37,7 +37,7 @@
             @Html.DisplayFor(model => model.Monster.Price)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Monster.ID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
