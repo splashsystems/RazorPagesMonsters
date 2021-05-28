@@ -29,13 +29,21 @@ namespace RazorPagesMonsters.Pages.Monsters
 
         public async Task OnGetAsync()
         {
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from m in _context.Monster
+                                            orderby m.Genre
+                                            select m.Genre;
             var monsters = from m in _context.Monster
                          select m;
             if (!string.IsNullOrEmpty(SearchString))
             {
                 monsters = monsters.Where(s => s.MonsterName.Contains(SearchString));
             }
-
+            if (!string.IsNullOrEmpty(MonsterGenre))
+            {
+                monsters = monsters.Where(x => x.Genre == MonsterGenre);
+            }
+            Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
             Monster = await monsters.ToListAsync();
         }
     }

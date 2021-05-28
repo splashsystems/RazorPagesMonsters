@@ -23,10 +23,11 @@ namespace RazorPagesMonsters.Models
                 context.Monster.AddRange(
                     new Monster
                     {
-                        MonsterName = "When Harry Met Sally",
-                        YearPopularized = DateTime.Parse("1989-2-12"),
-                        Genre = "Romantic Comedy",
-                        Price = 7.99M
+                        MonsterName = "Dracula",
+                        YearPopularized = DateTime.Parse("1897-1-1"),
+                        Genre = "Were Monster",
+                        Price = 1.15M,
+                        Rating = "A"
                     },
 
                     new Monster
@@ -34,7 +35,8 @@ namespace RazorPagesMonsters.Models
                         MonsterName = "Pikachu",
                         YearPopularized = DateTime.Parse("1996-2-27"),
                         Genre = "Pokemon",
-                        Price = 5.67M
+                        Price = 5.67M,
+                        Rating = "A"
                     },
 
                     new Monster
@@ -42,7 +44,8 @@ namespace RazorPagesMonsters.Models
                         MonsterName = "Slimer",
                         YearPopularized = DateTime.Parse("1984-6-15"),
                         Genre = "Ghostbusters",
-                        Price = 34.55M
+                        Price = 34.55M,
+                        Rating = "A"
                     },
 
                     new Monster
@@ -50,7 +53,8 @@ namespace RazorPagesMonsters.Models
                         MonsterName = "Alien",
                         YearPopularized = DateTime.Parse("1979-5-25"),
                         Genre = "Space Monsters",
-                        Price = 10.00M
+                        Price = 10.00M,
+                        Rating = "A"
                     }
                 );
                 context.SaveChanges();
